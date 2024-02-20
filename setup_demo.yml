@@ -48,5 +48,3 @@
       tags: 
         - notification
 
-# To execute the playbook, use the following command:
-# ansible-playbook -i inventory.ini setup_demo.yml --ask-vault-pass
