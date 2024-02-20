@@ -1,0 +1,54 @@
+---
+- name: Set up demo environment and send email notification
+  hosts: localhost  # Use localhost for testing
+  become: yes  # Escalate privileges
+  vars:
+    email_username: "fatehi.amirali77@gmail.com"  # Gmail username
+    customer_emails:  # List of recipient emails
+      - "amirali@itsl.se"
+      #- "erik.edlund@itsakerhetsbolaget.se" 
+      #- "fredrik.jonasson@itsl.se"
+      #- "customer3@example.com"
+    email_password: !vault |  # Encrypted email password
+          $ANSIBLE_VAULT;1.1;AES256
+          39623532643339366537353533373938306136366363393637346539383130303366663331386432
+          6462393831393037386133393037623663353237666335620a326234363666633133343136333465
+          39353738613337656134343032613132343839633966633935353333636134356635386530656138
+          6432636537393730630a376361386365353331353765386564613830636362303162383933316134
+          31646664646263666231653836323866353862633036373063653033643164356566
+
+  tasks:
+    - name: Install necessary packages
+      ansible.builtin.apt:
+        name: "{{ item }}"  # Use loop to install each package
+        state: present
+        update_cache: yes
+      loop: ["apache2", "php", "php-mysql"]  # List of packages to be installed
+      when: ansible_os_family == "Debian"  # Conditional execution for Debian-based systems
+      tags: 
+        - setup
+
+    - name: Start Apache web server (workaround)
+      ansible.builtin.shell: |
+        service apache2 status || service apache2 start  # Check if Apache is active, start if not
+      ignore_errors: true  # Continue on errors
+      changed_when: false  # Do not report changes
+      tags: 
+        - webserver
+
+    - name: Send email notification
+      community.general.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: "{{ email_username }}"
+        password: "{{ email_password }}"
+        to: "{{ customer_emails | join(',') }}"  # Send to multiple recipients
+        subject: "Zammad Request Received"
+        body: "We have received your request for a Zammad instance. We will process it shortly."
+        secure: starttls
+      no_log: true  # Prevent logging sensitive information
+      tags: 
+        - notification
+
+# To execute the playbook, use the following command:
+# ansible-playbook -i inventory.ini setup_demo.yml --ask-vault-pass
