@@ -5,5 +5,5 @@ sudo visudo
 
 Add the Passwordless Sudo Entry: In the editor that opens, add the following line to grant server3 passwordless sudo privileges:
 
-"user" ALL=(ALL) NOPASSWD: ALL     #till exp: server3 ALL=(ALL) NOPASSWD: ALL
+"user" ALL=(ALL) NOPASSWD: ALL          #till exp: server3 ALL=(ALL) NOPASSWD: ALL
 
