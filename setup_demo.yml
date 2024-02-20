@@ -6,9 +6,7 @@
     email_username: "fatehi.amirali77@gmail.com"  # Gmail username
     customer_emails:  # List of recipient emails
       - "amirali@itsl.se"
-      #- "erik.edlund@itsakerhetsbolaget.se" 
-      #- "fredrik.jonasson@itsl.se"
-      #- "customer3@example.com"
+      - "customer3@example.com"
     email_password: !vault |  # Encrypted email password
           $ANSIBLE_VAULT;1.1;AES256
           39623532643339366537353533373938306136366363393637346539383130303366663331386432
