@@ -3,12 +3,15 @@ Ansible project directory is structured as follows:
 
 /ansible-project
     /roles
+        
         /software_installation
             /tasks
                 main.yml
+        
         /web_server_configuration
             /tasks
                 main.yml
+        
         /email_notification
             /tasks
                 main.yml
