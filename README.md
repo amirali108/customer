@@ -40,7 +40,15 @@ Ansible project directory is structured as follows:
                 main.yml
 
 
+1-/software_installation: This directory holds tasks related to software installation. It's structured in a way that separates concerns, making it clear that tasks within this directory are specifically related to installing software components.
 
+2-/web_server_configuration: Here, tasks for configuring the web server are stored. This directory is dedicated to tasks related to setting up and configuring the web server. Again, it's a clear separation of concerns, which is good practice for maintaining an organized project.
+
+
+3-/email_notification: This directory contains tasks for managing email notifications. It's structured similarly to the other directories, with a clear focus on tasks related to email notifications.
+
+
+4-main.yml files: Each directory has a main.yml file, which is likely used to define and organize tasks. This is a common convention in Ansible projects, where the main.yml file serves as an entry point for the tasks within that directory.
 
 
 Here's how to safely edit the /etc/sudoers file:
