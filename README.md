@@ -25,19 +25,9 @@ Project Structure:
 
 The Ansible project directory is structured as follows:
 
-/ansible-project
-/roles
-/software_installation
-/tasks
-main.yml: Contains tasks related to software installation.
 
-/web_server_configuration
-/tasks
-main.yml: Contains tasks related to web server configuration.
 
-/email_notification
-/tasks
-main.yml: Contains tasks related to email notifications.
+<img width="463" alt="2" src="https://github.com/amirali108/customer/assets/117827939/693c565b-d028-48ef-b270-788e96d17d3e">
 
 
 Each role directory contains a tasks subdirectory, which further organizes tasks based on their functionality. The main.yml files serve as entry points for the tasks within each directory, promoting modularity and maintainability.
