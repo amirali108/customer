@@ -1,0 +1,32 @@
+---
+- name: Deploy Customer Portal
+  hosts: demo_servers
+  become: yes
+
+  tasks:
+    - name: Install Apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure Apache service is running and enabled
+      ansible.builtin.service:
+        name: apache2
+        state: started
+        enabled: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Deploy Customer Portal HTML page
+      ansible.builtin.copy:
+        src: files/customer_portal/index.html
+        dest: /var/www/html/index.html
+      notify:
+        - restart apache
+
+  handlers:
+    - name: restart apache
+      ansible.builtin.service:
+        name: apache2
+        state: restarted
+      when: ansible_os_family == "Debian"
