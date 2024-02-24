@@ -20,17 +20,38 @@ Components:
 
 3-Email Notifications: Configure automated email notifications to inform customers about their deployed environments, ensuring transparency and timely updates.
 
-
 Project Structure:
 
 The Ansible project directory is structured as follows:
 
 
 
-<img width="463" alt="2" src="https://github.com/amirali108/customer/assets/117827939/693c565b-d028-48ef-b270-788e96d17d3e">
+/ansible-project
+    ├── roles
+    │   ├── software_installation
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── web_server_configuration
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   └── email_notification
+    │       └── tasks
+    │           └── main.yml
+    ├── deploy_customer_portal.yml
+    └── README.md
 
 
+In the project structure:
 
+1-The roles directory contains Ansible roles for different components of the deployment process.
+
+-software_installation: Contains tasks related to software installation.
+-web_server_configuration: Contains tasks for configuring the web server.
+-email_notification: Contains tasks for managing email notifications.
+
+2-The deploy_customer_portal.yml playbook is responsible for deploying the customer portal component.
+
+3-The README.md file contains documentation providing an overview of the project, its objectives, components, and structure.
 
 
 
