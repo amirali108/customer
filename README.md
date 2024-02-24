@@ -25,7 +25,8 @@ Project Structure:
 The Ansible project directory is structured as follows:
 
 
-<img width="545" alt="6" src="https://github.com/amirali108/customer/assets/117827939/bd898cf6-c326-45c4-a1ab-54913efe2364">
+<img width="476" alt="8" src="https://github.com/amirali108/customer/assets/117827939/ab7fa786-1b1a-401d-81f6-595dbc75a486">
+
 
 
 
