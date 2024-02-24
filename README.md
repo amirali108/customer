@@ -47,5 +47,7 @@ In the project structure:
 
 
 
+<img width="477" alt="5" src="https://github.com/amirali108/customer/assets/117827939/d8a03f4f-1958-49d8-8edc-8bfbe515be31">
+
 
 
