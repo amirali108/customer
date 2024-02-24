@@ -26,19 +26,8 @@ The Ansible project directory is structured as follows:
 
 
 
-/ansible-project
-    ├── roles
-    │   ├── software_installation
-    │   │   └── tasks
-    │   │       └── main.yml
-    │   ├── web_server_configuration
-    │   │   └── tasks
-    │   │       └── main.yml
-    │   └── email_notification
-    │       └── tasks
-    │           └── main.yml
-    ├── deploy_customer_portal.yml
-    └── README.md
+<img width="201" alt="3" src="https://github.com/amirali108/customer/assets/117827939/772c1755-7b2f-4b92-ac65-e39ed480de5d">
+
 
 
 In the project structure:
